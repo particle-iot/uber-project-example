@@ -47,13 +47,13 @@ Vendored library can be included like this:
 #include <vendored_library_name.h>
 ```
 
-As you can see global and vendored libraries share namespace. This is done by setting [`APPLIBS` env variable](https://github.com/spark/firmware/pull/1009) with libraries paths.
+As you can see global and vendored libraries share namespace. This is done by setting [`APPLIBS` env variable](https://github.com/particle-iot/firmware/pull/1009) with libraries paths.
 
 ## What does the compiler do with such apps?
 
-1. First [`wiring-preprocessor` buildpack](https://github.com/spark/buildpack-wiring-preprocessor) will transpile any `.ino` files into `.cpp` (this behaviour can be disabled with `#pragma PARTICLE_NO_PREPROCESSOR`).
+1. First [`wiring-preprocessor` buildpack](https://github.com/particle-iot/buildpack-wiring-preprocessor) will transpile any `.ino` files into `.cpp` (this behaviour can be disabled with `#pragma PARTICLE_NO_PREPROCESSOR`).
 
-2. Next [`install-dependencies` buildpack](https://github.com/spark/buildpack-install-dependencies) will install all dependencies as vendored libraries:
+2. Next [`install-dependencies` buildpack](https://github.com/particle-iot/buildpack-install-dependencies) will install all dependencies as vendored libraries:
 
 	`particle libraries install --vendor`
 
